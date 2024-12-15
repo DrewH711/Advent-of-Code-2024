@@ -13,7 +13,6 @@ def mul(x,y):
     return x*y
 
 #first evaluate by 8-character chunks, then 9, then 10, and so on to get all possible lengths of mul() commands
-bannedChars = ['*','+','-','/','#','~','@','[',']','?','!','&',' ']
 for k in range(8,13):
     for i in range(inputLength-k):
         val=""
