@@ -1,3 +1,4 @@
+import copy
 data = [[7, 6, 4, 2, 1],
 [1, 2, 7, 8, 9],
 [9, 7, 6, 2, 1],
@@ -1028,16 +1029,25 @@ def isDecreasing(inlist: list):
             return False
     return True
 
+def isSafe(input: list):
+    if(not isIncreasing(input) and not isDecreasing(input)):
+        return False
+    for i in range(len(input)-1):
+        if(abs(int(input[i])-int(input[i+1]))>3):
+            return False
+
+    return True
+
 for report in datalist:
-    safe = True
-    if(not isIncreasing(report) and not isDecreasing(report)):
-        continue # don't add to safe total, move to next report
-    for i in range(len(report)-1):
-        if(abs(int(report[i])-int(report[i+1]))>3):
-            safe = False
-            break
-    if(safe):
+    if(isSafe(report)):
         safeTotal+=1
+    else:
+        for i in range(len(report)):
+            reportCopy = copy.copy(report)
+            reportCopy.pop(i)
+            if(isSafe(reportCopy)):
+                safeTotal+=1
+                break
 print(safeTotal)
 
-    
+
