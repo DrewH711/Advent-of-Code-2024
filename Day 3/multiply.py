@@ -24,10 +24,9 @@ for k in range(8,13):
             chars = list(val)
             if(chars[0]=='m' and chars[k-1]==')'):
                 total = total + num
-                print(val)
             else:
                 continue
         except:
             continue
 
-print(total)
+print(input.split("don't()"))
