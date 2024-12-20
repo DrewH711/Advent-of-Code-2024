@@ -29,4 +29,4 @@ for k in range(8,13):
         except:
             continue
 
-print(input.split("don't()"))
+print(total)

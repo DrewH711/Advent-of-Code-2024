@@ -1049,5 +1049,3 @@ for report in datalist:
                 safeTotal+=1
                 break
 print(safeTotal)
-
-
