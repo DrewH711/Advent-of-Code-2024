@@ -1,31 +1,8 @@
-rulesdata = """47|53
-97|13
-97|61
-97|47
-75|29
-61|13
-75|53
-29|13
-97|29
-53|29
-61|53
-97|53
-61|29
-47|13
-75|47
-97|75
-47|61
-75|61
-47|29
-75|13
-53|13"""
+with open("Advent of Code 2024/Day 5/input1.txt") as f:
+    rulesdata = f.read()
 
-data = """75,47,61,53,29
-97,61,53,29,13
-75,29,13
-75,97,47,61,53
-61,13,29
-97,13,75,29,47"""
+with open("Advent of Code 2024/Day 5/input2.txt") as f:
+    data = f.read()
 
 strinput = data.splitlines()
 finput = []
@@ -57,6 +34,7 @@ for book in finput:
             if(book.index(rule[0])>book.index(rule[1])):
                 allowed = False
     if(allowed):
+        print(book)
         length = len(book)
         pagetotal+=book[int((length-1)/2)]
 
